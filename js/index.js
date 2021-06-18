@@ -47,10 +47,18 @@ let blueCar = new Car(220, 575, 50, 125)
 window.onkeydown = function (e) {
   if (e.key === 'ArrowLeft') {
     blueCar.x -= 10
+    if (blueCar.x < 0) {
+      blueCar.x += 10
+      console.log('Out of bounds')
+    }
     console.log('left')
   }
   if (e.key === 'ArrowRight') {
     blueCar.x += 10
+    if (blueCar.x > 450) {
+      blueCar.x -= 10
+      console.log('Out of bounds')
+    }
     console.log('right')
   }
 }
